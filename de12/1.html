@@ -5,39 +5,76 @@
     <title>第一回課題ドキュメンテーション</title>
     <!-- ⑤スタイルシートの設定をしよう -->
      <link rel="stylesheet" href="css/style.css">
+     
     <style>
         body {
             background-color: #e0f2fe;
         }
+        .box {
+            width: 600px;         /* 幅を指定する */
+            margin-left: auto;    /* 左右の余白を自動で均等にする */
+            margin-right: auto;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column; /* 中身を上から下へ縦に並べる */
+            gap: 1px;
+            line-height: 1.10;
+            align-items: center;     
+            justify-content: center;  
+            max-width: 4800px; 
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .container img {
+            max-width: 100%;
+            height: auto; /* 縦横比を維持したまま縮小する */
+            display: block; /* 画像下の微妙な隙間を消す */
+        }
+        h3 {
+            font-size: 30px; /* 文字の大きさを20pxに変更する */
+        }
+        h4 {
+            font-size: 40px; 
+        }
+
     </style>
 </head>
 
 
 <body>
+    <div class="container">
+
     <h1>第一回のまとめ</h1><br>
     <h2>htmlについて</h2>
+    </div>
 
     <!-- 塊ごとにdivタグで区切るようにしましょう。 -->
-    <div>
-        <h3>googleには「htmlとは、HyperText Markup Languageの略で、ウェブページを作成するためのマークアップ言語です。」とありますがこの説明では理解することが難しいと思います。</h4><br>  
+    <div class="container">
+        
+        <h3>googleには<br>
+            「htmlとは、HyperText Markup Languageの略で、ウェブページを作成するためのマークアップ言語です。」<br>
+            とありますがこの説明では理解することが難しいと思います。</h4><br>  
           <!--　①文字を書いてみよう-->
         AIを用いて自分なりに噛み砕くとhtmlとは、ウェブページを作成するための言語であり、テキストや画像、リンクなどを組み合わせてウェブページを作り、表示するための基本的な構造を提供する言語であると説明することができます。<br>
         <h3>次に、htmlにおいて重要な三要素を説明します。<h3><br>
             <ol>
-                <li><h3>タグ</h3></li>
-                <li><h3>属性</h3></li>
-                <li><h3>要素</h3></li>
+                <li><h4>タグ</h4></li>
+                <li><h4>属性</h4></li>
+                <li><h4>要素</h4></li>
             </ol>
         <h3>タグとは</h3><br>
             htmlにおいて要素を定義するための記号であり、テキストの始まりは開始タグ終わりには終了タグといったふうに構成されます。ボディなどの段落を定義する意味を持つタグをpタグと言います。<br>
         <h3>属性とは</h3><br>
             タグに追加情報(属性や性質)を提供するためのものであり、タグの動作や表示方法を制御するために使用されます。例えば、画像を表示するimgタグにおいて、src属性は画像のURLを指定し、alt属性は画像が表示できない場合の代替テキストを提供します。<br>
-            （例）画像を表示(100%)<br>
-    <img src="./images/スクリーンショット 2026-10-07 11.50.16.png" width="100%"><br>
+            （例）画像を表示(70%)<br>
+    <img src="./images/スクリーンショット 2026-10-07 11.50.16.png" width="70%"><br>
         <h3>要素とは</h3><br>
             タグとその内容を含む構造のことであり、webページを構成するテキスト情報の塊です。開始タグ、終了タグで囲まれます。
             さらにhead要素とbody要素の二つに大きく分けられ、head要素にはコンピュータ用の情報、body要素には実際のブラウザ表示用の情報が記入されます。<br>
-    <img src="./images/スクリーンショット 2026-10-07 12.06.58.png" width="100%"><br>        
+    <img src="./images/スクリーンショット 2026-10-07 12.06.58.png" width="70%"><br>        
 
          <!-- ②↓に画像（imagesフォルダにあるtest.png）を挿入してみよう -->
 
@@ -46,12 +83,14 @@
          <!-- ④↓に外部リンクを作ってみよう -->
 
     </div>
-    <h2>gitについて</h2>
-    <div>
+    <div class="container">
+
+        <h2>gitについて</h2>
+    
         <h4>gitとは何かについてgoogleで検索すると「Gitとは、分散型バージョン管理システムで、ファイルのバージョン管理が簡単にできるツールである」と書いてありますがかなり分かりにくい説明ですよね？</h4><br>
         <h3>そこでAIを用いて自分なりに噛み砕くとgitとは１つのファイルに全ての変更の歴史を残すことができ、修正も容易にできるという特徴を持ったゲームのセーブ機能のようなツールであると説明することができます。</h3><br>
-画像を表示(100%)<br>
-    <img src="./images/スクリーンショット 2026-10-07 12.23.16.png" width="100%"><br>
+画像を表示(70%)<br>
+    <img src="./images/スクリーンショット 2026-10-07 12.23.16.png" width="70%"><br>
 
             Gitとは、ソフトウェア開発において、ソースコードやドキュメントなどのファイルの変更履歴を管理するためのツールであり、Gitを使うことで、複数の開発者が同じプロジェクトに参加しても、各自の変更を追跡し、必要に応じて以前のバージョンに戻すことができます。また、Gitは各開発者が自分のローカル環境で作業でき、チームでの協力やコードの統合がスムーズに行えるようになります。<br>
 
@@ -67,23 +106,5 @@
     </div>
 
 <div>
-画像を表示(30%)<br>
-    <img src="./images/88738C15-1984-4C7D-8D35-C460A9FA47EC.avif" width="30%"><br>
-画像を表示(40%)<br>
-    <img src="./images/88738C15-1984-4C7D-8D35-C460A9FA47EC.avif" width="40%"><br>
-
-    <ol>
-        <li>ああああああ</li>
-        <li>いいいいい</li>
-    </ol>
-     <a href="index.html">デザイン演習Ⅰ・Ⅱトップページ</a><br>
-     <a href="../index.html">XBPトップページ</a><br>
-     <a href="https://www.yahoo.co.jp/" target="_blank">Yahoo! Japan</a><br>
-     <a href="files/test.pdf" target="_blank">PDFファイルを開く</a><br>
-   
-
-
-     <iframe width="560" height="315" src="https://www.youtube.com/embed/g80mYMk6bf8?si=mbe354a6X8UiaVTN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
 
 
