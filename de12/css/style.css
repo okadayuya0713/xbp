@@ -52,3 +52,84 @@ span.blackback{
     color: #efefef;
 }
 
+
+.page-about h1 {
+    color:white;
+    font-family: "Helvetica Neue";
+}
+.page-about h2 {
+    color: yellow;
+    font-family: "Hiragino Kaku Gothic ProN";
+}
+.page-about p {
+    color:white;
+    font-family: "Times New Roman";
+}
+.page-about body {
+    line-height: 1.8;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    font-family: "Noto Sans JP", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.cool-card {
+    background: rgba(255, 255, 255, 0.05); /* 半透明の白 */
+    backdrop-filter: blur(12px); /* 背景をすりガラス風にぼかす */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* 薄い光るような枠線 */
+    border-radius: 20px;
+    padding: 40px;
+    width: 320px;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* マウスを乗せたとき（ホバー時）のアクション */
+.cool-card:hover {
+    transform: translateY(-8px); /* わずかに浮き上がる */
+    box-shadow: 0 20px 40px rgba(0, 242, 254, 0.2); /* シアン色のネオン光が広がる */
+    border-color: rgba(0, 242, 254, 0.4);
+}
+
+/* 見出しのスタイリング */
+.cool-card h2 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* 文字にグラデーションをかける */
+}
+
+/* 本文のスタイリング */
+.cool-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px;
+}
+
+/* ボタンのスタイリング */
+.cool-button {
+    display: inline-block;
+    padding: 10px 24px;
+    background: linear-gradient(90deg, #00f2fe, #4facfe);
+    color: #111;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 13px;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.cool-button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
