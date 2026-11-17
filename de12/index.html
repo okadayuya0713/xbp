@@ -1,32 +1,63 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>XBP_HPsample</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XBP_HPsample | ポータル</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./images/xbp.ico">
 </head>
 <body>
-    <logotohome>
-    <a href="../index.html"><img src="./images/0_XBlogo.png" alt=""></a>
-    </logotohome>
-    <h1>デザイン演習Ⅰ・Ⅱ</h1>
-        <h2>HTMLに関すること</h2>
-        <ol>
-            <li><a href="./hp1.html" target="_blank">htmlの基礎知識</a></li>
-            <li><a href="./hp2.html" target="_blank">htmlのwork</a></li>
-            <li><a href="./test.html" target="_blank">テストページ</a></li>
-        </ol>
-        <h2>演習ノート一覧</h2>
-            <li><a href="./1.html" target="_blank">第一回課題ドキュメンテーション</a></li>
-            <li><a href="./2.html" target="_blank">路上観察</a> </li>
-            <li><a href="./3.html" target="_blank">第二回課題ドキュメンテーション</a><>
-        </ol>
 
-    
-<br>
-<br>
+    <!-- 背景の微かなグラデーション光 -->
+    <div class="bg-glow"></div>
 
+    <!-- ヘッダー / ロゴエリア -->
+    <header class="home-header">
+        <div class="logo-wrapper">
+            <a href="../index.html">
+                <img src="./images/0_XBlogo.png" alt="XBP Logo">
+            </a>
+        </div>
+        <h1>デザイン演習Ⅰ・Ⅱ</h1>
+        <p>演習ノートや学習記録</p>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="container">
+
+        <!-- HTMLに関することセクション -->
+        <section class="quest-card fade-in">
+            <div class="card-header">
+                <span class="badge">CATEGORY 01</span>
+                <h2>HTMLに関すること</h2>
+            </div>
+            <div class="card-body">
+                <ul class="styled-link-list">
+                    <li><a href="./hp1.html" target="_blank"><span>htmlの基礎知識</span><span class="external-icon">↗</span></a></li>
+                    <li><a href="./hp2.html" target="_blank"><span>htmlのwork</span><span class="external-icon">↗</span></a></li>
+                    <li><a href="./test.html" target="_blank"><span>テストページ</span><span class="external-icon">↗</span></a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 演習ノート一覧セクション -->
+        <section class="quest-card fade-in delay-1">
+            <div class="card-header">
+                <span class="badge">CATEGORY 02</span>
+                <h2>演習ノート一覧</h2>
+            </div>
+            <div class="card-body">
+                <ul class="styled-link-list">
+                    <li><a href="./1.html" target="_blank"><span>第一回課題ドキュメンテーション</span><span class="external-icon">↗</span></a></li>
+                    <li><a href="./2.html" target="_blank"><span>路上観察</span><span class="external-icon">↗</span></a></li>
+                    <li><a href="./3.html" target="_blank"><span>第二回課題ドキュメンテーション</span><span class="external-icon">↗</span></a></li>
+                    <li><a href="./4.html" target="_blank"><span>python ゲーム</span><span class="external-icon">↗</span></a></li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
 
 </body>
 </html>

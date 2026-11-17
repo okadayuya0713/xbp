@@ -1,31 +1,94 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>デジタルファブリケーション</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>デザイン演習Ⅰ・Ⅱ | ポータルサイト</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./images/xbp.ico">
 </head>
 <body>
-    <logotohome>
-    <a href="../index.html"><img src="./images/0_XBlogo.png" alt=""></a>
-    </logotohome>
-    <h1>デジタルファブリケーション</h1>
-    <h2>演習ノート一覧</h2>
-     <ol>
-            <li><a href="./1.html" target="_blank">ピンセット型お箸</a></li>
-            <li><a href="./2.html" target="_blank">スマホスタンド充電器</a></li>
-            <li><a href="./3.html" target="_blank">観察課題</a></li>
-    
-     <ol>
 
+    <!-- ヘッダー（クリーンなコーポレート風） -->
+    <header class="mixi-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo-link">
+                <img src="./images/0_XBlogo.png" alt="XBP Logo">
+            </a>
+            <div class="header-nav-text">PORTAL ARCHIVE</div>
+        </div>
+    </header>
 
+    <!-- ヒーローセクション（大胆なタイポグラフィと余白） -->
+    <section class="mixi-hero">
+        <div class="hero-content">
+            <span class="hero-tag">XBP DESIGN EXERCISES</span>
+            <h1 class="hero-title">デザイン演習 Ⅰ・Ⅱ</h1>
+            <p class="hero-desc">日々の学習成果と実践的な制作演習の記録をここに集約。</p>
+        </div>
+    </section>
 
+    <!-- メインコンテンツ -->
+    <main class="mixi-main">
+        <div class="content-container">
+            
+            <!-- セクション 1: HTMLに関すること -->
+            <section class="mixi-section fade-in">
+                <div class="section-header">
+                    <span class="section-num">01</span>
+                    <h2>HTMLに関すること</h2>
+                </div>
+                <div class="link-grid">
+                    <a href="./hp1.html" target="_blank" class="link-card">
+                        <span class="card-title">htmlの基礎知識</span>
+                        <span class="card-arrow">→</span>
+                    </a>
+                    <a href="./hp2.html" target="_blank" class="link-card">
+                        <span class="card-title">htmlのwork</span>
+                        <span class="card-arrow">→</span>
+                    </a>
+                    <a href="./test.html" target="_blank" class="link-card">
+                        <span class="card-title">テストページ</span>
+                        <span class="card-arrow">→</span>
+                    </a>
+                </div>
+            </section>
 
-    
-<br>
-<br>
+            <!-- セクション 2: 演習ノート一覧 -->
+            <section class="mixi-section fade-in delay-1">
+                <div class="section-header">
+                    <span class="section-num">02</span>
+                    <h2>演習ノート一覧</h2>
+                </div>
+                <div class="link-grid">
+                    <a href="./1.html" target="_blank" class="link-card">
+                        <span class="card-title">ピンセットお箸</span>
+                        <span class="card-arrow">→</span>
+                    </a>
+                    <a href="./2.html" target="_blank" class="link-card">
+                        <span class="card-title">スマホスタンド充電器</span>
+                        <span class="card-arrow">→</span>
+                    </a>
+                    <a href="./3.html" target="_blank" class="link-card">
+                        <span class="card-title">行動観察</span>
+                        <span class="card-arrow">→</span>
+                    </a>
+                    <a href="./4.html" target="_blank" class="link-card">
+                        <span class="card-title">第四回課題ドキュメンテーション</span>
+                        <span class="card-arrow">→</span>
+                    </a>
+                </div>
+            </section>
 
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="mixi-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 XBP Design Exercises. All Rights Reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>

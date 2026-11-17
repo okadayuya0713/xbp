@@ -1,0 +1,214 @@
+:root {
+    --bg-dark: #0f1115;
+    --card-bg: rgba(22, 25, 33, 0.85);
+    --gold-primary: #d4af37;
+    --gold-light: #f3e5ab;
+    --text-main: #e2e8f0;
+    --text-muted: #94a3b8;
+    --border-color: rgba(212, 175, 55, 0.2);
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', 'Meiryo', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* 背景の微かなグラデーション光 */
+.bg-glow {
+    position: fixed;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, rgba(0,0,0,0) 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* --- ヘッダー --- */
+header {
+    background: linear-gradient(to bottom, rgba(15, 17, 21, 0.95), rgba(10, 11, 14, 0.8));
+    border-bottom: 1px solid var(--border-color);
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.sub-title {
+    display: inline-block;
+    color: var(--gold-primary);
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+header h1 {
+    color: #ffffff;
+    font-size: 2.3rem;
+    margin: 0;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 10px;
+}
+
+/* --- メインコンテナ --- */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* --- レポート用カード --- */
+.quest-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.card-header {
+    background: rgba(15, 17, 21, 0.8);
+    padding: 18px 25px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.badge {
+    background: var(--gold-primary);
+    color: #000;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+}
+
+.card-header h2 {
+    color: var(--gold-light);
+    font-size: 1.35rem;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+/* --- テキスト・装飾パーツ --- */
+p {
+    margin-bottom: 20px;
+}
+
+.highlight-box {
+    background: rgba(212, 175, 55, 0.05);
+    border-left: 3px solid var(--gold-primary);
+    padding: 18px 20px;
+    border-radius: 0 4px 4px 0;
+    margin: 25px 0;
+    color: #f3e5ab;
+}
+
+.sub-heading {
+    color: var(--gold-light);
+    font-size: 1.1rem;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 8px;
+    margin: 35px 0 15px 0;
+}
+
+.styled-list, .ref-list {
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+.styled-list li, .ref-list li {
+    margin-bottom: 10px;
+}
+
+/* インラインコード風のデザイン */
+code {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: var(--gold-light);
+    font-size: 0.9em;
+}
+
+/* 画像の表示エリア */
+.img-wrapper {
+    text-align: center;
+    margin: 25px 0;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.img-wrapper img {
+    max-width: 70%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    display: block;
+    margin: 0 auto;
+}
+
+/* リンクのデザイン */
+a {
+    color: var(--gold-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--gold-light);
+    text-decoration: underline;
+}
+
+/* YouTube動画のレスポンシブ対応 */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    margin-top: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* --- フッター --- */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border-color);
+    background: rgba(10, 11, 14, 0.9);
+}

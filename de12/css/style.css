@@ -1,135 +1,241 @@
-@charset "utf-8";
-/* 冒頭でimport */
-@import url('https://fonts.googleapis.com/css?family=Raleway:700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700&display=swap&subset=japanese');
-/* フォントを指定したいところで */
-
-logo img{
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover; /* 画像のトリミング */
+:root {
+    --bg-dark: #0f1115;
+    --card-bg: rgba(22, 25, 33, 0.85);
+    --gold-primary: #d4af37;
+    --gold-light: #f3e5ab;
+    --text-main: #e2e8f0;
+    --text-muted: #94a3b8;
+    --border-color: rgba(212, 175, 55, 0.2);
 }
 
-logotohome img{
-    border-radius: 70%;
-    width: 70px;
-    height: 70px;
-    object-fit: cover; /* 画像のトリミング */
-}
-
-
-
-/* ========== common ========== */
-html, body {
-	font-size: 16px;
-	font-family: sans-serif;
-	color: #393939;
-    margin-left: 15px;
-    margin-bottom: 40px;
-	background: #efefef;
-}
-h1{
-    text-indent: 0em;
-}
-h2{
-    margin-left: 1em;
-    margin-top: 1em;
-}
-h3{
-    margin-left: 2em;
-}
-div{
-    margin-top: 1em;
-    margin-left: 3em;
-}
-p{
-    margin-left: 3em;
-}
-span.blackback{
-    text-indent: 3em;
-    background: #393939;
-    color: #efefef;
-}
-
-
-.page-about h1 {
-    color:white;
-    font-family: "Helvetica Neue";
-}
-.page-about h2 {
-    color: yellow;
-    font-family: "Hiragino Kaku Gothic ProN";
-}
-.page-about p {
-    color:white;
-    font-family: "Times New Roman";
-}
-.page-about body {
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', 'Meiryo', sans-serif;
+    margin: 0;
+    padding: 0;
     line-height: 1.8;
-    background: linear-gradient(135deg, #1f1c2c, #928dab);
-    font-family: "Noto Sans JP", sans-serif;
+    position: relative;
+    overflow-x: hidden;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
+    flex-direction: column;
 }
 
-.cool-card {
-    background: rgba(255, 255, 255, 0.05); /* 半透明の白 */
-    backdrop-filter: blur(12px); /* 背景をすりガラス風にぼかす */
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1); /* 薄い光るような枠線 */
-    border-radius: 20px;
-    padding: 40px;
-    width: 320px;
-    color: #ffffff;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* --- 背景の光がゆったり動くアニメーション --- */
+.bg-glow {
+    position: fixed;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.07) 0%, rgba(0,0,0,0) 70%);
+    z-index: -1;
+    pointer-events: none;
+    animation: pulseGlow 8s ease-in-out infinite alternate;
 }
 
-/* マウスを乗せたとき（ホバー時）のアクション */
-.cool-card:hover {
-    transform: translateY(-8px); /* わずかに浮き上がる */
-    box-shadow: 0 20px 40px rgba(0, 242, 254, 0.2); /* シアン色のネオン光が広がる */
-    border-color: rgba(0, 242, 254, 0.4);
+@keyframes pulseGlow {
+    0% { transform: translateX(-50%) scale(1); opacity: 0.8; }
+    100% { transform: translateX(-50%) scale(1.15); opacity: 1; }
 }
 
-/* 見出しのスタイリング */
-.cool-card h2 {
-    font-size: 20px;
-    margin-top: 0;
+/* --- ページ読み込み時のふわっと出現するアニメーション --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.2s; /* 2つ目のカードを少し遅れて表示 */
+    opacity: 0;
+}
+
+/* --- ホームヘッダー & ロゴ --- */
+.home-header {
+    background: linear-gradient(to bottom, rgba(15, 17, 21, 0.95), rgba(10, 11, 14, 0.8));
+    border-bottom: 1px solid var(--border-color);
+    padding: 50px 20px 35px 20px;
+    text-align: center;
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.logo-wrapper img {
+    max-height: 60px;
+    width: auto;
     margin-bottom: 15px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo-wrapper img:hover {
+    transform: scale(1.08) rotate(-2deg);
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+}
+
+.home-header h1 {
+    color: #ffffff;
+    font-size: 2.2rem;
+    margin: 0;
     letter-spacing: 1px;
-    background: linear-gradient(90deg, #00f2fe, #4facfe);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; /* 文字にグラデーションをかける */
+    font-weight: 700;
 }
 
-/* 本文のスタイリング */
-.cool-card p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
+.home-header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+/* --- メインコンテナ --- */
+.container {
+    max-width: 750px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+/* --- ポータルカード（立体感＆ホバーの浮き上がり） --- */
+.quest-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
     margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.3s ease;
 }
 
-/* ボタンのスタイリング */
-.cool-button {
-    display: inline-block;
-    padding: 10px 24px;
-    background: linear-gradient(90deg, #00f2fe, #4facfe);
-    color: #111;
+.quest-card:hover {
+    transform: translateY(-5px); /* マウスを乗せると上に浮く */
+    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15);
+    border-color: rgba(212, 175, 55, 0.5);
+}
+
+.card-header {
+    background: rgba(15, 17, 21, 0.8);
+    padding: 16px 25px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.badge {
+    background: var(--gold-primary);
+    color: #000;
+    font-size: 0.7rem;
     font-weight: bold;
-    text-decoration: none;
-    border-radius: 30px;
-    font-size: 13px;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    padding: 3px 8px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    transition: transform 0.2s;
 }
 
-.cool-button:hover {
-    opacity: 0.9;
+.quest-card:hover .badge {
     transform: scale(1.05);
 }
 
+.card-header h2 {
+    color: var(--gold-light);
+    font-size: 1.2rem;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.card-body {
+    padding: 20px 25px;
+}
+
+/* --- 動くリンクアイテム --- */
+.styled-link-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.styled-link-list li {
+    margin-bottom: 12px;
+}
+
+.styled-link-list li:last-child {
+    margin-bottom: 0;
+}
+
+.styled-link-list a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 14px 20px;
+    border-radius: 6px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* マウスホバー時のリッチなスライド＆光の演出 */
+.styled-link-list a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.styled-link-list a:hover::before {
+    left: 100%; /* 光の筋が横切るアニメーション */
+}
+
+.styled-link-list a:hover {
+    background: rgba(212, 175, 55, 0.08);
+    border-color: var(--gold-primary);
+    color: var(--gold-light);
+    transform: translateX(6px); /* 右にスーッとスライドする */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.external-icon {
+    color: var(--gold-primary);
+    font-size: 0.85rem;
+    opacity: 0.5;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.styled-link-list a:hover .external-icon {
+    opacity: 1;
+    transform: translate(3px, -3px); /* 矢印が斜め右上へピョロッと動く */
+}
+
+/* --- フッター --- */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border-color);
+    background: rgba(10, 11, 14, 0.9);
+    margin-top: auto;
+}
