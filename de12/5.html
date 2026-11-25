@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>芸人マッチング</title>
+    <link rel="stylesheet" href="css/gmstyle.css">
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <span class="badge">芸人マッチング</span>
+            <h1>openAIやWikipediaのライブラリを利用して好きな芸人とマッチング</h1>
+            <p>自分の好みの芸人を探そう</p>
+            <div class="hero-btns">
+                <a href="#play" class="btn-primary">ソースコードを閲覧</a>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- メインコンテンツ -->
+    <main class="main-container">
+
+        <!-- ゲームについて -->
+        <section id="about" class="section">
+            <div class="section-title">
+                <span class="num">01</span>
+                <h2>ABOUT THE WEBSITE</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>芸人マッチングについて</h3>
+                    <p>このサイトは、openAIやWikipediaのライブラリを利用して、自分の好みの芸人を見つけるためのものです。</p>
+                    <p>芸人を選び、その芸人とのマッチング結果を確認できます。</p>
+                </div>
+                <div class="about-card">
+                    <div class="stat-item">
+        
+                        <span class="stat-label">AIによる芸人分析</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">お気に入り登録機能</span>
+                        <span class="stat-label">自分の好きな芸人を保存できます</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+                </div>
+                    <h2>Webサイトの画面とAIによる芸人分析機能の例</h2><br>
+                    <img src="./images/スクリーンショット 2026-11-25 10.04.51.png" width="100%"><br><br>
+                    <h2>賞レース戦績の閲覧機能の例</h2><br>
+                    <img src="./images/スクリーンショット 2026-11-25 10.05.09.png" width="100%"><br><br>
+                    <h2>芸人のプロフィール閲覧機能の例</h2><br>
+                    <img src="./images/スクリーンショット 2026-11-25 10.04.34.png" width="100%"><br><br>
+                </div>
+            </div>
+        </section>
+
+        <section id="play" class="cta-section">
+            <div class="cta-box fade-in">
+                <h1>使い方</h1><br>
+                <h2>STEP1: vscodeのターミナルで"source .venv-1/bin/activate"を実行して環境を有効化</h2><br>
+                <h2>STEP2: "export OPENAI_API_KEY="sk-あなたのキー""をターミナルで実行する</h2><br>
+                <h2>STEP3: "streamlit run app.py"を実行してマッチングを開始する</h2><br>
+                <h2>*注意: streamlitをインストールしていない場合は、"pip install streamlit"を実行してインストールします</h2><br>
+                <h2>*注意: 画面のソースコードなどをXcodeに入れないと実際にプレイはできません</h2><br>
+                <a href="./geininn.html" class="btn-primary" target="_blank">ソースコードを閲覧する</a>
+            </div>
+        </section>
+
+        
+
+
+    </main>
+
+
+</body>
+</html>
